@@ -15,4 +15,6 @@ return [
     '(and :count more error)' => '(and :count more error)',
     'Log Out' => 'Log Out',
     '(and :count more errors)' => '(and :count more errors)',
+    'Next' => 'Next',
+    'Previous' => 'Previous',
 ];

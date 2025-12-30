@@ -13,7 +13,7 @@ class DegreeProgramSeeder extends Seeder
     public function run(): void
     {
         $data = [];
-        $programs = ['Computer Science', 'Software Engineering', 'BS Physics', 'BS Mathematics', 'Business Administration', 'Mechanical Engineering', 'Media Sciences', 'Biomedical Engineering'];
+        $programs = ['Computer Science', 'Software Engineering', 'BS Physics', 'BS Mathematics', 'Business Administration', 'Mechanical Engineering', 'Media Sciences', 'Biomedical Engineering', 'Teacher'];
         foreach ($programs as $program) {
             if (!\App\Models\DegreeProgram::where('name', $program)->exists()) {
                 $data[] = [

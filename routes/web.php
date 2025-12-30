@@ -37,6 +37,8 @@ Route::middleware('auth')->group(function () {
     Route::controller(StudentController::class)->group(function () {
         Route::match(['get', 'post'], 'students', 'index')->name('students');
         Route::match(['get', 'post'], 'students/create', 'create')->name('students.create');
+        Route::match(['get', 'post'], 'students/update', 'update')->name('students.update');
+        Route::get('get', 'change_status')->name('students.change_status');
     });
 
     Route::controller(DegreeProgramController::class)->group(function () {

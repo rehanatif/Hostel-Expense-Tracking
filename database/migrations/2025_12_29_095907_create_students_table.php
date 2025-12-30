@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('degree_program')->nullable();
+            $table->unsignedBigInteger('degree_program_id')->nullable();
             $table->unsignedBigInteger('referred_by')->nullable();
             $table->string('name')->nullable();
+            $table->string('cnic')->nullable();
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
             $table->string('father_name')->nullable();
@@ -24,6 +25,7 @@ return new class extends Migration
             $table->string('emergency_contact')->nullable();
             $table->string('address')->nullable();
             $table->string('image')->nullable();
+            $table->string('status')->default('Pending'); // Active, Inactive, Pending
             $table->timestamps();
         });
     }

@@ -165,8 +165,8 @@
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            /* transform: translateY(-5px); */
+            box-shadow: 30px 20px 45px rgba(0, 0, 0, 0.1);
         }
     </style>
     @yield('styles')
@@ -248,6 +248,7 @@
     <script src="{{ $path }}assets/vendor/libs/typeahead-js/typeahead.js"></script>
     <script src="{{ $path }}assets/vendor/js/menu.js"></script>
 
+
     <!-- endbuild -->
 
     <!-- Vendors JS -->
@@ -258,10 +259,14 @@
 
     <!-- Page JS -->
     <script src="{{ $path }}assets/js/dashboards-crm.js"></script>
+    <script src="{{ $path }}assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script>
+    <script src="{{ $path }}assets/js/tables-datatables-extensions.js"></script>
     <script src="{{ $path }}assets/vendor/libs/select2/select2.js"></script>
 
     <script src="{{ $path }}assets/vendor/libs/toastr/toastr.js"></script><!-- Page JS -->
     <script src="{{ $path }}assets/js/ui-toasts.js"></script>
+    <script src="{{ $path }}assets/vendor/libs/sweetalert2/sweetalert2.js"></script>
+
     <script src="{{ $path }}assets/js/customjs/custome_validation.js" defer></script>
     <script src="{{ $path }}assets/js/customjs/generic.js" defer></script>
     <script>

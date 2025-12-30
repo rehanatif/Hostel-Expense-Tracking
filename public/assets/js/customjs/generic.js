@@ -417,7 +417,7 @@ function changeStatus(event, obj, route, table_id) {
     Swal.fire({
         title: $(obj).attr("title"),
         text: $(obj).attr("content"),
-        imageUrl: '../../vuexy/assets/images/auth/replace.png', // Add your custom icon URL
+        // imageUrl: '../../vuexy/assets/images/auth/replace.png', // Add your custom icon URL
         imageWidth: 50, // Adjust size as needed
         imageHeight: 50,
         showCancelButton: true,

@@ -118,6 +118,18 @@ function regex_email(element,message)
 // REJEX BASE VALIDATION CHECK CONTACT NO
 $(document.body).on('keyup','.cls_contact',function(){
 
+        let value = $(this).val().replace(/\D/g, ''); // remove non-digits
+
+    // Force starting 03
+    if (value.startsWith('3')) {
+        value = '0' + value;
+    }
+
+    if (value.length > 4) {
+        value = value.slice(0, 4) + '-' + value.slice(4, 11);
+    }
+
+    $(this).val(value);
     validate_contact($(this));
 
   })
@@ -141,7 +153,7 @@ function validate_contact(contact)
 }
 
 function pakistani_regex_PhoneNo(element, errorValue) {
-    var regex_phone = /^(?:\+92|0092|0)?3\d{9}$/;
+    var regex_phone = /^(?:\+92|0092|0)?3\d{2}-?\d{7}$/;
 
     if (regex_phone.test(element.val().trim())) {
         return true;
