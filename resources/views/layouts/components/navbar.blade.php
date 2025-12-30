@@ -49,6 +49,18 @@
                 </a>
             </li>
             <li class="menu-item">
+                <a href="{{ route('fee_collections') }}" class="menu-link ">
+                    <i class="menu-icon tf-icons ti ti-id-badge"></i>
+                    <div data-i18n="Fee Collection">Fee Collection</div>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="{{ route('expenses') }}" class="menu-link ">
+                    <i class="menu-icon tf-icons ti ti-id-badge"></i>
+                    <div data-i18n="Manage Expense">Manage Expense</div>
+                </a>
+            </li>
+            <li class="menu-item">
                 <a href="javascript:void(0)" class="menu-link ">
                     <i class="menu-icon tf-icons ti ti-money"></i>
                     <div data-i18n="Transactions">Transactions</div>

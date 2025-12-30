@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\DegreeProgramController;
+use App\Http\Controllers\ExpenseController;
+use App\Http\Controllers\FeeCollection;
+use App\Http\Controllers\FeeCollectionController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\StudentController;
@@ -39,6 +42,18 @@ Route::middleware('auth')->group(function () {
         Route::match(['get', 'post'], 'students/create', 'create')->name('students.create');
         Route::match(['get', 'post'], 'students/update', 'update')->name('students.update');
         Route::get('get', 'change_status')->name('students.change_status');
+    });
+
+    Route::controller(FeeCollectionController::class)->group(function () {
+        Route::match(['get', 'post'], 'fee_collections', 'index')->name('fee_collections');
+        Route::match(['get', 'post'], 'fee_collections/create', 'create')->name('fee_collections.create');
+        Route::match(['get', 'post'], 'fee_collections/list', 'list')->name('fee_collections.list');
+    });
+
+    Route::controller(ExpenseController::class)->group(function () {
+        Route::match(['get', 'post'], 'expenses', 'index')->name('expenses');
+        Route::match(['get', 'post'], 'expenses/create', 'create')->name('expenses.create');
+        Route::match(['get', 'post'], 'expenses/list', 'list')->name('expenses.list');
     });
 
     Route::controller(DegreeProgramController::class)->group(function () {
