@@ -47,12 +47,13 @@ Route::middleware('auth')->group(function () {
     Route::controller(FeeCollectionController::class)->group(function () {
         Route::match(['get', 'post'], 'fee_collections', 'index')->name('fee_collections');
         Route::match(['get', 'post'], 'fee_collections/create', 'create')->name('fee_collections.create');
+        Route::match(['get', 'post'], 'fee_collections/update', 'update')->name('fee_collections.update');
         Route::match(['get', 'post'], 'fee_collections/list', 'list')->name('fee_collections.list');
     });
 
     Route::controller(ExpenseController::class)->group(function () {
         Route::match(['get', 'post'], 'expenses', 'index')->name('expenses');
-        Route::match(['get', 'post'], 'expenses/create', 'create')->name('expenses.create');
+        Route::match(['get', 'post'], 'expense/create', 'create')->name('expense.create');
         Route::match(['get', 'post'], 'expenses/list', 'list')->name('expenses.list');
     });
 

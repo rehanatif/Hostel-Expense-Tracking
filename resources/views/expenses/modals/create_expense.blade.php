@@ -1,23 +1,23 @@
-<div class="modal fade" id="md_create_fee_collection" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="md_create_expense" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-simple modal-enable-otp modal-share-project modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-body">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 <div class="text-center">
-                    <h4 class="mb-2">Add Fee Collection</h4>
+                    <h4 class="mb-2">Add Expense</h4>
                 </div>
             </div>
-            <form action="{{ route('fee_collections.create') }}" method="post" enctype="multipart/form-data"
-                id="form_md_create_fee_collection">
+            <form action="{{ route('expense.create') }}" method="post" enctype="multipart/form-data"
+                id="form_md_create_expense">
                 @csrf
                 <div class="row">
                     <div class="col-md-6 mb-6 mx-4 mx-md-0">
-                        <label for="student" class="form-label">Select Student</label>
-                        <select id="student" name="student_id" class="form-select form-select-lg share-project-select"
-                            data-allow-clear="true">
+                        <label for="category" class="form-label">Select Category</label>
+                        <select id="category" name="category_id"
+                            class="form-select form-select-lg share-project-select" data-allow-clear="true">
                             <option></option>
-                            @foreach ($students as $student)
-                                <option value="{{ $student->id }}">{{ $student->name }}</option>
+                            @foreach ($categories as $category)
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -52,7 +52,7 @@
                         <div class="d-flex justify-content-between flex-grow-1 align-items-center flex-wrap gap-2">
 
                             <button
-                                onclick="formSubmitWithModal(event, this, '#md_create_fee_collection', '#form_md_create_fee_collection')"
+                                onclick="formSubmitWithModal(event, this, '#md_create_expense', '#form_md_create_expense')"
                                 class="btn btn-primary">Submit</button>
                         </div>
                     </div>
@@ -67,6 +67,6 @@
             // ajaxUrl = "{{ route('degree_programs.list') }}";
             // alert(ajaxUrl);
 
-            initSelect2('#student', 'Select Student', false, '100%', null, 2, false)
+            initSelect2('#category', 'Select Category', false, '100%', null, 2, false)
         });
     </script>

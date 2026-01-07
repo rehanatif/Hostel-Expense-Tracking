@@ -35,13 +35,13 @@
         <div class="col-md-12">
             <div class="card mb-4">
                 <div class="card-header">
-                    <h4 class="card-title mb-0 d-inline-block"><i class="fas fa-users me-2"></i>Manage Fee Collections</h4>
+                    <h4 class="card-title mb-0 d-inline-block"><i class="fas fa-users me-2"></i>Manage Expenses</h4>
                     <button class="btn btn-primary d-inline-block text-right" style="float: right"
-                        onclick="onFetchFormModal(event, '{{ route('fee_collections.create') }}', '#md_create_fee_collection', '#bind_modal')">Add
-                        Fee Collection</button>
+                        onclick="onFetchFormModal(event, '{{ route('expense.create') }}', '#md_create_expense', '#bind_modal')">Add
+                        Expense</button>
                 </div>
                 <div class="table-responsive text-nowrap p-4">
-                    <table class="table table-sm " id="fee_collection_table">
+                    <table class="table table-sm " id="expenses_table">
                         <thead>
                             <tr>
                                 <th></th>
@@ -51,7 +51,7 @@
                                 <th>Amount</th>
                                 <th>Date</th>
                                 <th>Remarks</th>
-                                <th>Student</th>
+                                <th>Updated By</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -79,7 +79,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
-    @include('fee_collections.scripts.fee_collection_script')
+    @include('expenses.scripts.expense_script')
     <script>
         // Start Page Scripts
     </script>

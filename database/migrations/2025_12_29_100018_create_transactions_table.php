@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('student_id')->nullable();
             $table->unsignedBigInteger('created_by')->nullable();
+            $table->unsignedBigInteger('updated_by')->nullable();
             $table->unsignedBigInteger('approved_by')->nullable();
             $table->unsignedBigInteger('category_id')->nullable();
             $table->decimal('amount', 15, 2)->default(0);
