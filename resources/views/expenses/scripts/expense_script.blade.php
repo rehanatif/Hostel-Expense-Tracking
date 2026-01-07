@@ -6,10 +6,10 @@
 </style>
 <script>
     $(function() {
-        loadFeeCollections();
+        loadExpenses();
     });
 
-    function loadFeeCollections() {
+    function loadExpenses() {
         var translations = {
             searchPlaceholder: "{{ __('students.Search Expense') }}",
             next: "{{ __('general.Next') }}",
