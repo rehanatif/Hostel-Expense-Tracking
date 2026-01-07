@@ -51,12 +51,21 @@ class ExoHelper
         ];
     }
 
-    public static function getSegment()
+    public static function getSegment($array = [], $call_back = 'active')
     {
-        $active_segment = \Request::segment(1);
-
-        return $active_segment;
+        if (in_array(\Request::segment(1), $array)) {
+            return $call_back;
+        } else {
+            return '';
+        }
     }
+
+    // public static function getSegment()
+    // {
+    //     $active_segment = \Request::segment(1);
+
+    //     return $active_segment;
+    // }
 
     public static function uploadFile($file, $file_name = '', $location = 'employees_dp')
     {

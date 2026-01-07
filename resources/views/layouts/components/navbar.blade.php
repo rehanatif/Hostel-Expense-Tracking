@@ -2,7 +2,7 @@
     <div class="container-xxl d-flex h-100">
         <ul class="menu-inner pb-2 pb-xl-0">
             <!-- Dashboards -->
-            <li class="menu-item active">
+            <li class="menu-item {{ EH::getSegment(['dashboard']) }}">
                 <a href="javascript:void(0)" class="menu-link menu-toggle">
                     <i class="menu-icon tf-icons ti ti-smart-home"></i>
                     <div data-i18n="Dashboards">Dashboards</div>
@@ -14,7 +14,7 @@
                             <div data-i18n="Analytics">Analytics</div>
                         </a>
                     </li>
-                    <li class="menu-item active">
+                    <li class="menu-item {{ EH::getSegment(['dashboard']) }}">
                         <a href="dashboards-crm.html" class="menu-link">
                             <i class="menu-icon tf-icons ti ti-3d-cube-sphere"></i>
                             <div data-i18n="CRM">CRM</div>
@@ -42,19 +42,19 @@
             </li>
 
             <!-- Students -->
-            <li class="menu-item">
+            <li class="menu-item {{ EH::getSegment(['students']) }}">
                 <a href="{{ route('students') }}" class="menu-link ">
                     <i class="menu-icon tf-icons ti ti-id-badge"></i>
                     <div data-i18n="Students">Students</div>
                 </a>
             </li>
-            <li class="menu-item">
+            <li class="menu-item {{ EH::getSegment(['fee_collections']) }}">
                 <a href="{{ route('fee_collections') }}" class="menu-link ">
                     <i class="menu-icon tf-icons ti ti-id-badge"></i>
                     <div data-i18n="Fee Collection">Fee Collection</div>
                 </a>
             </li>
-            <li class="menu-item">
+            <li class="menu-item {{ EH::getSegment(['expenses']) }}">
                 <a href="{{ route('expenses') }}" class="menu-link ">
                     <i class="menu-icon tf-icons ti ti-id-badge"></i>
                     <div data-i18n="Manage Expense">Manage Expense</div>
