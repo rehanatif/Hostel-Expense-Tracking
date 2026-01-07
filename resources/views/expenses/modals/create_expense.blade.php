@@ -52,7 +52,7 @@
                         <div class="d-flex justify-content-between flex-grow-1 align-items-center flex-wrap gap-2">
 
                             <button
-                                onclick="formSubmitWithModal(event, this, '#md_create_expense', '#form_md_create_expense')"
+                                onclick="formSubmitWithModal(event, this, '#md_create_expense', '#form_md_create_expense','#expenses_table')"
                                 class="btn btn-primary">Submit</button>
                         </div>
                     </div>

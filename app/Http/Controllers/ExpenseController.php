@@ -92,7 +92,7 @@ class ExpenseController extends Controller
 
     public function create(Request $request)
     {
-        // Handle both GET and POST requests for creating fee collections
+        // Handle both GET and POST requests for creating Expenses
         if ($request->isMethod('post')) {
             // Process POST request logic here
             $form_collect = $request->input();
@@ -100,15 +100,15 @@ class ExpenseController extends Controller
             $expense = $this->expense->createExpense($form_collect);
 
             if (isset($expense->id)) {
-                parent::setResponse(true, 'Fee collection created successfully.');
+                parent::setResponse(true, 'Expense created successfully.');
             } else {
-                parent::setResponse(false, 'Failed to create fee collection.');
+                parent::setResponse(false, 'Failed to create Expense.');
             }
 
             return parent::getResponse();
         }
 
-        // For GET request, return the create fee collection view
+        // For GET request, return the create Expense view
         $categories = $this->category->getCategories();
         return view('expenses.modals.create_expense', compact('categories'))->render();
     }
@@ -117,7 +117,7 @@ class ExpenseController extends Controller
     {
         $expense = $this->expense->find($request->id);
         if (!$expense) {
-            parent::setResponse(false, 'Fee collection not found.');
+            parent::setResponse(false, 'Expense not found.');
             return parent::getResponse();
         }
 
@@ -128,15 +128,15 @@ class ExpenseController extends Controller
             $expense = $this->expense->updateExpense($form_collect);
 
             if (isset($expense->id)) {
-                parent::setResponse(true, 'Fee collection updated successfully.');
+                parent::setResponse(true, 'Expense updated successfully.');
             } else {
-                parent::setResponse(false, 'Failed to update fee collection.');
+                parent::setResponse(false, 'Failed to update Expense.');
             }
 
             return parent::getResponse();
         }
 
-        $students = $this->student->getStudents();
-        return view('expenses.modals.update_expense', compact('students', 'expense'))->render();
+        $categories = $this->category->getCategories();
+        return view('expenses.modals.update_expense', compact('categories', 'expense'))->render();
     }
 }

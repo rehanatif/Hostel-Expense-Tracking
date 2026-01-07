@@ -54,6 +54,7 @@ Route::middleware('auth')->group(function () {
     Route::controller(ExpenseController::class)->group(function () {
         Route::match(['get', 'post'], 'expenses', 'index')->name('expenses');
         Route::match(['get', 'post'], 'expense/create', 'create')->name('expense.create');
+        Route::match(['get', 'post'], 'expense/update', 'update')->name('expense.update');
         Route::match(['get', 'post'], 'expenses/list', 'list')->name('expenses.list');
     });
 

@@ -4,7 +4,7 @@
     </button>
     <div class="dropdown-menu">
         <a class="dropdown-item waves-effect" href="javascript:void(0);"
-            onclick="onFetchFormModal(event, '{{ route('fee_collections.update', ['id' => $rows->id]) }}', '#md_update_fee_collection', '#bind_modal')"><i
+            onclick="onFetchFormModal(event, '{{ route('expense.update', ['id' => $rows->id]) }}', '#md_update_expense', '#bind_modal')"><i
                 class="ti ti-pencil me-1"></i> Edit</a>
     </div>
 </div>
